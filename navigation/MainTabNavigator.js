@@ -3,8 +3,8 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import InfoScreen from '../screens/InfoScreen';
 import GreetingScreen from '../screens/GreetingScreen';
+import AboutDeveloperScreen from '../screens/AboutDeveloperScreen';
 
 const GreetingStack = createStackNavigator({
   Home: GreetingScreen,
@@ -24,12 +24,12 @@ GreetingStack.navigationOptions = {
   ),
 };
 
-const InfoStack = createStackNavigator({
-  Links: InfoScreen,
+const AboutDeveloperStack = createStackNavigator({
+  Info: AboutDeveloperScreen,
 });
 
-InfoStack.navigationOptions = {
-  tabBarLabel: 'Links',
+AboutDeveloperStack.navigationOptions = {
+  tabBarLabel: 'About developer',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -40,5 +40,5 @@ InfoStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   GreetingStack,
-  InfoStack,
+  AboutDeveloperStack,
 });
