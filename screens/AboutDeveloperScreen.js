@@ -1,17 +1,25 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Image, Text } from 'react-native';
 import { WebBrowser } from 'expo';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default class AboutDeveloperScreen extends React.Component {
   static navigationOptions = {
-    title: 'Info',
+    header: null
   };
 
   render() {
     return (
-      <View styles={styles.container}>
-        Hi! How are you? Do you want to get to know me more? Click the "About developer" button down here :)
-      </View>
+      <ScrollView>
+        <View style={styles.imageContainer}>
+          <Image source={require('../assets/images/my-photo.png')}></Image>
+        </View>
+        <View style={styles.infoContainer}>
+          <Text>
+            lorem20
+          </Text>
+        </View>
+      </ScrollView>
     );
   }
 
@@ -29,7 +37,12 @@ export default class AboutDeveloperScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
+    backgroundColor: 'aqua',
   },
+  imageContainer: {
+
+  },
+  infoContainer: {
+
+  }
 });
